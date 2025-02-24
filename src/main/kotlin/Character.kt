@@ -1,13 +1,12 @@
-abstract class Character(name: String, attackPower: Double) {
-    val name = name
+abstract class Character(val name: String, val attackPower: Double) {
     var health : Double = 100.0
-    var attackPower = attackPower
 
-    fun takeDamage(damage: Double) {
-        health -= damage
+
+    abstract fun takeDamage(attacker: Character)
+
+    fun attack(attacked: Character) {
+        attacked.takeDamage(this)
     }
-
-    abstract fun attack(character: Character)
 
     fun isAlive(): Boolean {
         return health > 0
