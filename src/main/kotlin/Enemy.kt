@@ -1,4 +1,4 @@
-class Enemy(name: String, attackPower: Double) : Character(name, attackPower) {
+class Enemy(name: String, attackPower: Double, health: Double) : Character(name, attackPower, health) {
 
     override fun takeDamage(attacker: Character) {
         this.health -= attacker.attackPower

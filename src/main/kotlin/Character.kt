@@ -1,6 +1,4 @@
-abstract class Character(val name: String, val attackPower: Double) {
-    var health : Double = 100.0
-
+abstract class Character(val name: String, var attackPower: Double, var health: Double) {
 
     abstract fun takeDamage(attacker: Character)
 

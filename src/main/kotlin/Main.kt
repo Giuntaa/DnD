@@ -1,32 +1,36 @@
+fun azione(eroe: Hero, goblin: Character) {
+    println("Azioni (digita numero corrispondente): \n 1)Attacco \n 2)Difesa \n 3)Fuga")
+    val azione: Int = readln().toInt()
+    when (azione) {
+        1->eroe.attack(goblin)
+        2->eroe.defend()
+        3->println("Sei fuggito dalla battaglia")
+    }
+    println("")
+}
+
 fun main() {
 
     print("Inserire il nome dell'eroe: ")
-    val eroe = Hero(readln(), 10.0)
-    val goblin = Enemy("goblin", 10.0)
+    val eroe = Hero(readln(), 10.0, 100.0)
+    val goblin_1 = Enemy("goblin", 10.0, 100.0)
 
-    while (eroe.isAlive()){
-        println("Azioni (digita numero corrispondente): \n 1)Attacco \n 2)Difesa \n 3)Fuga")
-        val azione: Int = readln().toInt()
-        when (azione) {
-            1->eroe.attack(goblin)
-            2-> eroe.defend()
-            3->{
-                println("Sei fuggito dalla battaglia")
-                break
-            }
+    println("Hai incontrato un goblin\n")
+    while (true) {
+        if (eroe.isAlive()) {
+            azione(eroe, goblin_1)
         }
-        goblin.attack(eroe)
-        println("")
-        if (!goblin.isAlive()){
-            println("Hai eliminato l'avversario")
+        else {
+            println("Hai perso")
             break
         }
-    }
-
-    if (eroe.isAlive()){
-        println("Hai vinto")
-    }
-    else{
-        println("Hai perso")
+        if (goblin_1.isAlive()) {
+            goblin_1.attack(eroe)
+        }
+        else {
+            println("Hai eliminato l'avversario")
+            println("Hai vinto")
+            break
+        }
     }
 }
