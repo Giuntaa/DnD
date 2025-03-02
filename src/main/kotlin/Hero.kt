@@ -19,7 +19,7 @@ class Hero(name: String, attackPower: Double, health: Double) : Character(name, 
         }
         else{
             this.health -= attacker.attackPower
-            println("Sei stato ferito, ti restano ${this.health} hp\")")
+            println("Sei stato ferito, ti restano ${this.health} hp\n")
         }
     }
 
