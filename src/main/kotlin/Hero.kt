@@ -12,7 +12,7 @@ class Hero(name: String, attackPower: Double, health: Double) : Character(name, 
             }
             else{
                 this.health -= ((attacker.attackPower)/2)
-                println("Ti sei difeso ma senza molto successo successo, ti restano ${this.health} hp")
+                println("Ti sei difeso ma senza molto successo, ti restano ${this.health} hp")
             }
             test = false
             success = false

@@ -1,12 +1,14 @@
-fun azione(eroe: Hero, goblin: Character) {
+fun azione(eroe: Hero, goblin: Character) : Int{
     println("Azioni (digita numero corrispondente): \n 1)Attacco \n 2)Difesa \n 3)Fuga")
     val azione: Int = readln().toInt()
     when (azione) {
         1->eroe.attack(goblin)
         2->eroe.defend()
-        3->println("Sei fuggito dalla battaglia")
+        3->{println("Sei fuggito dalla battaglia")
+            return 3}
     }
     println("")
+    return 0
 }
 
 fun main() {
@@ -18,7 +20,9 @@ fun main() {
     println("Hai incontrato un goblin\n")
     while (true) {
         if (eroe.isAlive()) {
-            azione(eroe, goblin_1)
+            if(azione(eroe, goblin_1) == 3){
+                break
+            }
         }
         else {
             println("Hai perso")

@@ -7,6 +7,6 @@ abstract class Character(val name: String, var attackPower: Double, var health: 
     }
 
     fun isAlive(): Boolean {
-        return health > 0
+       return health > 0
     }
 }
