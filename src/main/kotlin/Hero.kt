@@ -26,6 +26,6 @@ class Hero(name: String, attackPower: Double, health: Double) : Character(name, 
     fun defend(): Boolean {
         test = true
         success = Random.nextBoolean()
-        return test; success
+        return success
     }
 }
